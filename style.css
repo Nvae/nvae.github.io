@@ -1,0 +1,667 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;750;900&display=swap');
+
+
+@font-face {
+  font-family: 'PayPalOpenTT';
+  src: url('fonts/PayPalOpenTT-Regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PayPalOpenTTMedium';
+  src: url('fonts/PayPalOpenTT-Medium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PayPalOpenTTBold';
+  src: url('fonts/PayPalOpenTT-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'FontsFree-Net-SFProDisplay-Heavy';
+  src: url('fonts/FontsFree-Net-SFProDisplay-Heavy.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'EuclidSquare-Regular';
+  src: url('fonts/EuclidSquare-Regular-WebS.woff') format('woff');
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+  display: block;
+  width: 100%;
+  max-width: 65ch;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  background-color: #ffffff; /* Espace à gauche */
+  margin: 0;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+header, footer {
+  width: 100%;
+}
+
+main {
+  max-width: 800px;
+  text-align: left;
+}
+
+h1 {
+    font-size: 2.25em;
+    letter-spacing: -.03em;
+    font-weight: 800; /* Inter Black */
+    margin: 0;
+    margin-bottom: .888889em;
+    line-height: normal;
+}
+
+h2 {
+  margin-top: 2.8em;
+  font-weight: 750;
+  margin-bottom: .8em;
+  font-size: 1.42857em;
+  line-height: 1.4;
+}
+
+h5 {
+    font-size: 1.65em;
+    letter-spacing: -.03em;
+    font-weight: 800;
+    margin-bottom: .888889em;
+    margin-left: 30px;
+    margin-top: 45px;
+}
+
+p.dark {
+  line-height: 1.6;
+  font-weight: 400;
+  color: #d1d5db
+}
+
+.nx-gap-3 {
+  gap: .75rem;
+}
+.nx-justify-end {
+  justify-content: flex-end;
+}
+.nx-items-center {
+  align-items: center;
+}
+.nx-flex-wrap {
+  flex-wrap: wrap;
+}
+.nx-grow {
+  flex-grow: 1;
+}
+.nx-flex {
+  display: flex;
+  margin-bottom: -1rem;
+  margin-top: 1rem;
+}
+.nx-items-center {
+  align-items: center;
+}
+.nx-mb-8 {
+  margin-bottom: 2rem;
+}
+
+img,video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.dark\:nx-bg-primary-300\/10 {
+  background-color: rgba(147,197,253,.1)
+}
+.nx-subpixel-antialiased {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+.nx-text-\[\.9em\] {
+  font-size: .9em;
+}
+.nx-pb-4, .nx-py-4 {
+  padding-bottom: 1rem;
+}
+.nx-py-4 {
+  padding-top: 1rem;
+}
+.nx-bg-primary-700\/5 {
+  background-color: #1f242a;
+}
+.nx-rounded-xl {
+  border-radius: .75rem;
+}
+.nx-overflow-x-auto {
+  overflow-x: auto;
+}
+.nx-mb-4 {
+  margin-bottom: 1rem;
+}
+pre {
+  contain: paint;
+}
+
+pre code .line, pre:not([data-theme]) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+body {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+body {
+  line-height: 2.3;
+  margin: 0;
+}
+
+button {
+  background-color: #171717;
+  color: white;
+  cursor: pointer;
+}
+
+#downloadButton {
+  display: none;
+  background-color: #edf0f2;
+  color: black;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  width: 11.8rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#textIconContainer {
+  display: flex;
+  align-items: center; /* Centre verticalement */
+  gap: 0.5em; /* Espacement entre le texte et l'icône */
+}
+
+#premiumButton {
+  display: none;
+  background-color: #fec400;
+  color: black;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 15px;
+  width: 11.8rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#premiumButton:hover { 
+  background-color: #eebe1f; 
+}
+
+input#uniqueIDInput {
+    margin-top: 0; */
+    padding: 15px;
+    border-radius: .375rem;
+    border: solid #cbd5e0;
+    width: 60%;
+    margin-bottom: 0;
+    border-width: 1.5px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+button#copyIDButton {
+  margin-top: 0;
+  height: 42px;
+}
+
+button#toggleIDVisibility {
+margin-top: 0;
+padding: 0;
+}
+
+.success-message {
+  display: none;
+  padding: 6px 16px;
+  background-color: #000000;
+  color: #fff;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  font-family: 'EuclidSquare-Regular';
+  box-shadow: 0 3px 6px -4px hsl(0deg 0% 0% / 12%), 0 6px 16px 0 hsl(0deg 0% 0% / 8%), 0 9px 28px 8px hsl(0deg 0% 0% / 5%);
+}
+
+/* Initial state for success message */
+.success-message {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Show animation */
+.success-message.show {
+  opacity: 1;
+  display: flex;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Fade-out animation */
+.success-message.fade-out {
+  opacity: 0;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.dark .input-container {
+  background-color: #1f242a;
+  border: 1px solid #1f242a;
+}
+
+.dark input {
+  border: solid black;
+  background: black;
+  color: white;
+  border-width: 1.5px;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.dark .currency-select {
+  border: none;
+  background: black;
+  color: #ffffff;
+}
+
+.dark button {
+  background-color: #ffffff;
+}
+
+.dark button#createButton {
+  color: black !important;
+}
+
+.dark #canvas {
+  border: 2px solid rgba(0, 0, 0, 0.377);
+}
+
+.dark button#createButton:hover {
+  background-color: #918f8f;
+}
+
+/* Enlever le soulignement sur tous les liens */
+a {
+  text-decoration: none;
+}
+
+/* Si besoin, assurez-vous qu'il n'est pas souligné en focus ou active */
+a:focus,
+a:active,
+a:hover {
+  text-decoration: none;
+}
+
+#themeImage {
+  transition: opacity 0.5s ease;
+}
+
+.fade-out {
+  opacity: 0; /* Rendre l'image invisible pour transition */
+}
+
+.fade-in {
+  opacity: 1; /* Rendre l'image visible pour transition */
+}
+
+.dark input:focus {
+  color: white;
+  background-color: black;
+  border-color: #000000;
+  -webkit-box-shadow: 0 0 0 .25rem rgba(0, 0, 0, 0.377);
+}
+
+  #button-container {
+    display: flex;
+    flex-direction: column; /* Organiser les boutons en colonne */
+    align-items: center; /* Centrer les boutons horizontalement */
+    gap: 10px; /* Ajouter un espace entre les boutons */
+}
+
+#closeButton {
+  background-color: #43525c;
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 10px;
+  padding: 13px;
+  border-radius: 25px;
+  border: none;
+  width: 177px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+#loadingSpinner {
+  animation: spin 0.8s linear infinite;
+  stroke-dasharray: 80;
+  stroke-dashoffset: 60;
+  transform-origin: center;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+/* Style pour la boîte de message */
+#messageBox {
+  display: none; /* Cacher la boîte de message par défaut */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  box-shadow: 0 0 50px rgb(169, 169, 169, 0.47);
+  width: 33rem; /* Largeur par défaut */
+  height: 33rem; /* Hauteur par défaut */
+  border-radius: 15px;
+  z-index: 1000;
+  max-width: 90%; /* Limite à 90% de la largeur de l'écran */
+  max-height: 90%; /* Limite à 90% de la hauteur de l'écran */
+  overflow: auto; /* Ajoute un défilement si le contenu déborde */
+}
+
+/* Médias queries pour les écrans plus petits */
+@media (max-width: 768px) {
+  #messageBox {
+    width: 90vw; /* Utiliser 90% de la largeur de la fenêtre */
+    height: auto; /* Permettre à la hauteur d'être ajustée automatiquement */
+    max-height: 80vh; /* Limite la hauteur à 80% de la fenêtre */
+  }
+}
+
+
+/* Style pour l'effet de flou */
+.blurred {
+  filter: blur(11px); /* Augmentez la valeur pour un flou plus prononcé */
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Style pour le fond sombre */
+#overlay {
+  display: none; /* Cacher l'overlay par défaut */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+
+#downloadButton:hover { 
+  background-color: #d1d7dec7; 
+}
+
+#canvas {
+  display: none;
+  border: 2px solid #edf0f2; /* Bordure grise autour du canvas */
+  margin-top: 20px;
+  border-radius: 10px;
+  width: 40%;
+}
+
+@media (max-width: 600px) { 
+  #canvas { 
+    max-width: 18em;
+    width: -webkit-fill-available;
+  }
+}
+
+/* Style pour la croix de fermeture */
+.close-icon {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  cursor: pointer;
+  color: #54616c;
+}
+
+#canvas-container { 
+  display: flex; 
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 18%; /* Ajustez la valeur selon vos besoins */
+  flex-wrap: wrap;
+}
+
+@media not all and (min-width: 768px) {
+    .container {
+        font-size: .875rem;
+        line-height: 1.71429;
+    }
+}
+
+@media (max-width: 432px) {
+  .container {
+  padding-top: 3rem;
+}
+}
+
+@media (max-width: 767px) {
+  input#email {
+  width: inherit;
+  padding: 17px;
+  font-size: inherit;
+  margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  input#money {
+  width: inherit;
+  padding: 16px;
+  font-size: inherit;
+  }
+}
+
+@media (max-width: 767px) {
+  button#createButton {
+margin-top: 10px;
+    padding: 16px;
+    border-radius: 9px;
+    border: none;
+    width: 100px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: inherit;
+  }
+}
+@media (max-width: 600px) {
+  #canvas-container {
+    justify-content: center;
+  }
+}
+
+
+label {
+    display: block;
+    font-weight: 600;
+}
+
+input {
+  margin-top: 5px;
+  padding: 15px;
+  border-radius: .375rem;
+  border: solid #cbd5e0;
+  width: 60%;
+  font-family: inherit;
+  margin-bottom: 10px;
+  border-width: 1.5px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* Ombre légère */
+}
+
+
+input:focus {
+  color: #212529;
+  background-color: #fff;
+  border-color: #8a8a8a;
+  outline: 0;
+  box-shadow: 0 0 0 .25rem rgba(231,231,231,1);
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  -webkit-appearance: none;
+  -webkit-box-shadow: 0 0 0 .25rem rgba(231,231,231,1);
+}
+
+/* Style pour le conteneur avec fond gris */
+.input-container {
+  background-color: #fffefe; /* Couleur de fond grise */
+  padding: 20px; /* Espacement autour de l'input */
+  border-radius: 8px; /* Coins arrondis pour le conteneur */
+  display: inline-block; /* Taille ajustée au contenu */
+  width: -webkit-fill-available;
+  border: 1px solid #e4e2e2;
+  transition: background-color 0.5s ease;
+}
+
+/* Style pour le select uniquement */
+.currency-select {
+  padding: 15px;
+  border-radius: .375rem;
+  border: solid #cbd5e0;
+  font-family: 'inter';
+  border-width: 1.5px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: checkbox;
+}
+
+.currency-select:hover {
+  border-color: #999; /* Change la bordure au survol */
+}
+
+
+h3 {
+  margin-top: 1.85356em;
+  font-weight: 750;
+  font-size: 1.5557em;
+  line-height: 1.4;*
+}
+
+input#money {
+    width: 5rem; /* Ajustez cette valeur pour la largeur souhaitée */
+}
+
+body.dark {
+  background-color: #121212;
+  color: #FFF;
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  flex-direction: column;
+  gap: 5px;
+  }
+
+.link {
+    color: #333; /* Couleur par défaut en thème clair */
+    transition: color 0.5s ease; /* Transition pour le changement de couleur */
+}
+
+/* Couleur du lien en thème sombre */
+body.dark .link {
+    color: #f3f4f6; /* Couleur en mode sombre */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;  /* Largeur du switch */
+  height: 34px; /* Hauteur du switch */
+}
+
+.switch input {
+  opacity: 0; /* Cache l'input */
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f0f0f0; /* Couleur du fond du switch */
+  transition: .4s; /* Animation de la transition */
+  border-radius: 34px; /* Coins arrondis */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 8px;
+    bottom: 7px;
+    background-color: #303030;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* État quand le switch est actif */
+input:checked + .slider {
+  background-color: #1f242a; /* Couleur du fond du switch quand activé */
+}
+
+.dark h5 {
+  color: #000000;
+}
+
+.dark #loadingSpinner circle {
+  stroke: black !important;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px); /* Déplacement du bouton interne */
+  background-color: #f0f0f0;
+}
+
+button {
+    margin-top: 10px;
+    padding: 13px;
+    border-radius: 6px;
+    border: none;
+    width: 85px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3c3b3b;
+}
+

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Paypal Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Success Message (initially hidden) -->
+<div id="successMessage" class="success-message" style="display: none;">
+    <svg viewBox="64 64 896 896" focusable="false" data-icon="check-circle" width="1em" height="1em" fill="#4ade80" aria-hidden="true" style="margin-right: 0.3em;">
+        <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm193.5 301.7l-210.6 292a31.8 31.8 0 01-51.7 0L318.5 484.9c-3.8-5.3 0-12.7 6.5-12.7h46.9c10.2 0 19.9 4.9 25.9 13.3l71.2 98.8 157.2-218c6-8.3 15.6-13.3 25.9-13.3H699c6.5 0 10.3 7.4 6.5 12.7z"></path>
+    </svg>
+    Copied to the clipboard!
+</div>
+    <div id="overlay"></div>
+    <div id="messageBox">
+        <svg class="close-icon" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M8.06067 5.93934C7.47489 5.35355 6.52514 5.35355 5.93935 5.93934C5.35357 6.52513 5.35357 7.47487 5.93935 8.06066L13.8787 16L5.93934 23.9394C5.35355 24.5251 5.35355 25.4749 5.93934 26.0607C6.52513 26.6465 7.47487 26.6465 8.06066 26.0607L16 18.1213L23.9394 26.0607C24.5252 26.6465 25.4749 26.6465 26.0607 26.0607C26.6465 25.4749 26.6465 24.5251 26.0607 23.9394L18.1213 16L26.0607 8.06066C26.6465 7.47487 26.6465 6.52513 26.0607 5.93934C25.4749 5.35355 24.5251 5.35355 23.9394 5.93934L16 13.8787L8.06067 5.93934Z" fill="currentColor"></path>
+        </svg>    
+        <h5>Devenir Premium</h5>
+        <p align="center"><img class="message-image" src="https://i.imgur.com/DVtkcZo.png" alt="Anime Girl">
+            <button id="closeButton">Rejoindre</button></p>
+            </div>
+    <div class="container" id="container">
+        <header>
+            <div style="
+        display: flex;
+        /* gap: 20%; */
+        align-items: center;
+    "><h1 style="
+        /* display: flex; */
+    ">Paypal Proof Generator</h1>
+            <div class="theme-switcher">
+            <label class="switch">
+                <input type="checkbox" id="themeSwitcher">
+                <span class="slider"></span>
+            </label>
+            <span id="themeText">Light</span>
+        </div></div><div class="nx-mb-8 nx-flex nx-items-center nx-gap-3"><div class="nx-flex nx-grow nx-flex-wrap nx-items-center nx-justify-end nx-gap-3"><span class="nx-cursor-default dark:nx-text-gray-400 nx-text-gray-600" style="color: #9ca3af;">Home</span><a href="/posts" class="link">About</a>
+            </div></div>
+        </header>
+    <p align="center"><img id="themeImage" width="100%" align="centre" src="https://i.imgur.com/Aeum6p5.png" alt="Image Thème"></p>
+    <main>
+        <section>
+            <h3>Generator</h3>
+            <div class="input-container">
+            <label for="email">Adresse mail / Nom d'utilisateur :</label>
+                <input type="email" id="email" placeholder="exemple@gmail.com"><br>
+                <div class="money-input-container">
+                    <label for="money">Montant d'argent :</label>
+                    <input type="number" id="money" placeholder="00.00">
+                    <select id="currency" class="currency-select">
+                        <option value="EUR">€ EUR</option>
+                        <option value="USD">$ USD</option>
+                        <option value="GBP">£ GBP</option>
+                        <option value="CAD">$ CAD</option>
+                        <!-- Ajoutez d'autres devises ici si besoin -->
+                    </select>
+                </div>
+                
+                <button id="createButton" onclick="startWithLoading()" style="
+                align-items: center;
+                color: white;
+                font-family: 'Inter';
+                font-weight: 500;">
+                <span id="buttonText">Create</span>
+                <svg id="loadingSpinner" style="display: none; margin-left: 8px;" width="16" height="16" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" stroke="white" stroke-width="4" fill="none" stroke-linecap="round"></circle>
+                </svg>
+            </button>             
+                
+            </div>
+            <div id="content-container">
+                <div id="canvas-container" style="display: flex; align-items: center;">            
+                    <canvas id="canvas"></canvas>
+                    <div id="button-container" style="display: flex; align-items: center; margin-left: 10px;"> <!-- Ajout de margin-left pour espacer le canvas -->
+                        <a id="downloadLink" download="image.png">
+                            <button id="downloadButton" style="gap: 10px;
+                            flex-wrap: wrap;
+                            display: none;
+                            align-items: center;
+                            align-content: revert;
+                            justify-content: center;
+                            padding: 10px;
+                            margin-top: 1.5236rem;">
+                                <!-- Icône SVG -->
+                                Télécharger
+                                    <svg width="17" height="24" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.25 3.75V15.3462L6.87348 10.9697C6.58058 10.6768 6.10571 10.6768 5.81282 10.9697C5.51992 11.2626 5.51992 11.7374 5.81282 12.0303L10.7626 16.9801C11.446 17.6635 12.554 17.6635 13.2374 16.9801L18.1872 12.0303C18.4801 11.7374 18.4801 11.2626 18.1872 10.9697C17.8943 10.6768 17.4194 10.6768 17.1265 10.9697L12.75 15.3462V3.75C12.75 3.33579 12.4142 3 12 3C11.5858 3 11.25 3.33579 11.25 3.75ZM21 19.5C21 19.0858 20.6642 18.75 20.25 18.75H3.75C3.33579 18.75 3 19.0858 3 19.5C3 19.9142 3.33579 20.25 3.75 20.25H20.25C20.6642 20.25 21 19.9142 21 19.5Z" fill="currentColor"></path>
+                                    </svg>
+                            </button>
+                        </a>
+                        <button id="premiumButton">Premium</button> 
+                    </div>
+                </div>
+            </div>
+                
+        </section>
+        <section>
+            <h2>À propos</h2>
+            <p>Ce site web est conçu pour créer des images de fausses transactions PayPal afin de faire des blagues à vos amis et proches, en leur faisant croire que vous leur avez envoyé de l'argent. Pour utiliser cet outil, il vous suffit d'entrer l'adresse e-mail ou le nom d'utilisateur puis choisir le montant souhaité. Enfin il ne reste plus qu'à cliquer sur "Générer".
+
+                Important : Nous ne sommes pas responsables des actions entreprises avec cet outil. Utilisez-le de manière responsable et uniquement à des fins de divertissement.</p>
+        </section>
+        <h2>Premium</h2>
+        <p>Accédez à plus de templates de paiements pranks, choisissez et personnalisez vos pranks, et bénéficiez d'options exclusives pour Android. Rejoignez notre Discord et créez un ticket pour effectuer votre paiement. Nous aurons également besoin de votre token pour vous donner l'accès. Vous pouvez trouvez votre token ci-dessous.</p>
+        <p align="center"></a></p>
+        <h2>Votre Token</h2>
+        <div style="background-color: #1f242a; padding: 1em; border-radius: 8px; display: flex; align-items: center;">
+            <div style="display: flex; align-items: center; background-color: #474e56; border-radius: 7px; flex-grow: 1; padding: 0.5em; height: 30px; margin-right: 0.5em;">
+                <!-- Input Field -->
+                <input type="password" id="uniqueIDInput" readonly value="EXAMPLE-UNIQUE-ID"
+                       style="flex-grow: 1; background-color: #474e56; color: #ffffff; border: none; outline: none; padding: 0.5em; font-size: 1em;">
+                
+                <!-- Toggle Visibility Icon -->
+                <button id="toggleIDVisibility" style="background: none; border: none; cursor: pointer; color: #ffffff; margin-left: 0.5em; margin-right: -1.5rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" fill="currentColor" viewBox="0 0 256 256" aria-hidden="true">
+                        <path id="visibilityIcon" d="M247.31,124.76c-.35-.79-8.82-19.58-27.65-38.41C194.57,61.26,162.88,48,128,48S61.43,61.26,36.34,86.35C17.51,105.18,9,124,8.69,124.76a8,8,0,0,0,0,6.5c.35.79,8.82,19.57,27.65,38.4C61.43,194.74,93.12,208,128,208s66.57-13.26,91.66-38.34c18.83-18.83,27.3-37.61,27.65-38.4A8,8,0,0,0,247.31,124.76ZM128,192c-30.78,0-57.67-11.19-79.93-33.25A133.47,133.47,0,0,1,25,128,133.33,133.33,0,0,1,48.07,97.25C70.33,75.19,97.22,64,128,64s57.67,11.19,79.93,33.25A133.46,133.46,0,0,1,231.05,128C223.84,141.46,192.43,192,128,192Zm0-112a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Z"></path>
+                    </svg>
+                </button>
+            </div>
+        
+            <!-- Copy Button -->
+            <button id="copyIDButton" style="padding: 0.5em 1em; background-color: #ffffff; color: #000000; border: none; border-radius: 7px; cursor: pointer; display: flex; align-items: center; font-family: inherit; font-weight: 700;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" fill="currentColor" viewBox="0 0 256 256" style="margin-right: 0.5em;">
+                    <path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path>
+                </svg>
+                Copy
+            </button>
+<!-- Success Message (initially hidden) -->
+</div>
+        
+        <footer>
+        <p>&copy; 2023 Generator</p>
+    </footer>
+        <script src="script.js"></script>
+</body>
+</html>
